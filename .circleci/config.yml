@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.7-stretch-browsers
+      - image: circleci/python:3.7.3-stretch-node-browsers
     working_directory: ~/AQA-Python-Odessa
     steps:
       - checkout
@@ -12,6 +12,11 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+      - run:
+          name: install allure CLI
+          command: |
+            uname -a
+            sudo npm install -g allure-commandline --save-dev
       - save_cache:
           paths:
             - ./venv
@@ -20,7 +25,13 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest
+            python3 -m pytest --alluredir ~/AQA-Python-Odessa/reports/results
+      - run:
+          name: generate report
+          when: always
+          command: |
+            allure generate -c ~/AQA-Python-Odessa/reports/results -o ~/AQA-Python-Odessa/reports/test_reports
       - store_artifacts:
-          path: test_reports
-          destination: test_reports
+          path: ~/AQA-Python-Odessa/reports/test_reports
+          destination: ~/AQA-Python-Odessa/reports/test_reports
+          when: always
