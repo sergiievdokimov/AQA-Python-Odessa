@@ -1,5 +1,6 @@
 import allure
 
+from src import rest_client
 from src.pages.issue_page import IssuePage
 from src.pages.search_issues_page import SearchIssuesPage
 from tests.base_test import BaseTest
@@ -36,3 +37,7 @@ class TestSearchIssue(BaseTest):
     #     self.dashboard_page.open_search_issues_page()
     #     self.search_issues_page.search_issue_by_text_advanced_mode(self.advanced_search_request)
     #     assert self.search_issues_page.is_present_search_results()
+
+
+
+

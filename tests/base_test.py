@@ -23,6 +23,30 @@ class BaseTest:
     def teardown_class(self):
         self.driver.close()
 
+    def log_full(r):
+        req = r.request
+        """
+        At this point it is completely built and ready
+        to be fired; it is "prepared".
 
+        However pay attention at the formatting used in
+        this function because it is programmed to be pretty
+        printed and may differ from the actual request.
+        """
+        print()
+        print('{}\n{}\n{}\n\n{}'.format(
+            '-----------REQUEST-----------',
+            req.method + ' ' + req.url,
+            '\n'.join('{}: {}'.format(k, v) for k, v in req.headers.items()),
+            req.body,
+        ))
 
+        print()
 
+        print('{}\n{}\n{}\n\n{}'.format(
+            '-----------RESPONSE-----------',
+            r.status_code,
+            '\n'.join('{}: {}'.format(k, v) for k, v in r.headers.items()),
+            r.text,
+        ))
+        print()

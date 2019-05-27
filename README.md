@@ -14,3 +14,4 @@ To run tests on CI you need to:
     
 The project contains next tags:
 - UI - tag for UI tests with Selenium
+- API - for API tests with Requests
