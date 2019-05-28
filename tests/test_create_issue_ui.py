@@ -1,9 +1,11 @@
+from src import rest_client
 from tests.base_test import BaseTest
 from random import randint
 import time
 import allure
 import random
 import string
+from src import json_fixtures
 
 
 class TestCreateIssue(BaseTest):
@@ -65,3 +67,4 @@ class TestCreateIssue(BaseTest):
     @allure.title('Cancel issue creation via click Cancel button')
     def test_cancel_create_issue(self):
         self.create_issue_page.click_cancel_button()
+

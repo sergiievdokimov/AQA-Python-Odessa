@@ -1,12 +1,16 @@
 import time
 import allure
+
 from src.pages.issue_page import IssuePage
 from tests.base_test import BaseTest
 
 
 class TestUpdateIssue(BaseTest):
 
-    UPDATED_SUMMARY = "New summary. To be removed"
+    UPDATED_SUMMARY = "Updated summary"
+    UPDATED_DESCRIPTION = "Updated description"
+    UPDATED_ISSUETYPE = "Bug"
+    UPDATED_PROJECT = "WEBINAR"
     UPDATED_PRIORITY = "Low"
     UPDATED_ASSIGNEE = "Unassigned"
 
