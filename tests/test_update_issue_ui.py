@@ -7,7 +7,7 @@ from tests.base_test import BaseTest
 
 class TestUpdateIssue(BaseTest):
 
-    UPDATED_SUMMARY = "Updated summary"
+    UPDATED_SUMMARY = "Updated summary. To be removed."
     UPDATED_DESCRIPTION = "Updated description"
     UPDATED_ISSUETYPE = "Bug"
     UPDATED_PROJECT = "WEBINAR"

@@ -2,7 +2,7 @@ import allure
 
 from src import rest_client, json_fixtures
 
-UPDATED_SUMMARY = "Updated API summary"
+UPDATED_SUMMARY = "Updated API summary. To be removed."
 UPDATED_DESCRIPTION = "Updated API description"
 UPDATED_ISSUETYPE = "Bug"
 UPDATED_PROJECT = "WEBINAR"
