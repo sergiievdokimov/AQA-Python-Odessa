@@ -37,3 +37,13 @@ def test_create_issue_api_exceeded_summary():
                                              description=description))
     assert response.status_code == 400
     assert response.json()['errors'] == {"summary": "Summary must be less than 255 characters."}
+
+
+flaky_test_pass_flag = False
+
+
+def test_passes_on_second_run():
+    global flaky_test_pass_flag
+    pass_flag = flaky_test_pass_flag
+    flaky_test_pass_flag = True
+    assert pass_flag
