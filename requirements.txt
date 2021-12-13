@@ -13,7 +13,7 @@ execnet==1.6.0
 flaky==3.5.3
 idna==2.8
 importlib-metadata==0.17
-lxml==4.3.3
+lxml==4.6.5
 more-itertools==4.3.0
 namedlist==1.7
 pipenv==2018.11.26
